@@ -1,0 +1,27 @@
+.grid {
+  @extend %grid;
+
+  &--full{
+    @extend %grid--full;
+  }
+
+  &__item {
+    @extend %grid__item;
+  }
+}
+
+.one-whole {
+  @extend %one-whole;
+}
+
+.one-half {
+  @extend %one-half;
+}
+
+.large--one-third {
+  @extend %one-third;
+}
+
+.medium--one-half {
+  @extend %one-half;
+}

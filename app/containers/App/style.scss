@@ -1,8 +1,9 @@
-.app-wrapper {
-  max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
+.app {
   display: flex;
-  min-height: 100%;
-  padding: 0 16px;
-  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 100vh;
+
+  &-content {
+    width: 100%;
+  }
 }

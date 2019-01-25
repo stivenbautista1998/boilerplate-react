@@ -4,6 +4,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 process.noDeprecation = true;
 
@@ -11,13 +12,13 @@ module.exports = (options) => ({
   mode: options.mode,
   entry: options.entry,
   output: Object.assign({ // Compile into js/build.js
-    path: path.resolve(process.cwd(), 'build'),
+    path: path.resolve(process.cwd(), 'dist'),
     publicPath: '/',
   }, options.output), // Merge with env dependent settings
   module: {
     rules: [
       {
-        test: /\.js$/, // Transform all .js files required somewhere with Babel
+        test: /\.(js|jsx)$/, // Transform all .js files required somewhere with Babel
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -26,19 +27,27 @@ module.exports = (options) => ({
       },
       {
         // Preprocess our own .scss files
-        test: /\.scss$/,
+        test: /\.(scss|sass|css)$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        // Preprocess 3rd party .css files located in node_modules
-        test: /\.css$/,
-        include: /node_modules/,
-        use: ['style-loader', 'css-loader'],
+        loaders: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+              sourceMap: true,
+              importLoaders: 1
+            }
+          },
+          'sass-loader',
+        ]
       },
       {
         test: /\.(eot|svg|otf|ttf|woff|woff2)$/,
-        use: 'file-loader',
+        loader: 'file-loader',
+        options: {
+          name: 'media/img/[name].[hash:7].[ext]'
+        }
       },
       {
         test: /\.(jpg|png|gif)$/,
@@ -61,7 +70,8 @@ module.exports = (options) => ({
                   quality: '65-90',
                   speed: 4
                 }
-              }
+              },
+              name: 'media/img/[name].[hash:7].[ext]'
             },
           },
         ],
@@ -75,7 +85,8 @@ module.exports = (options) => ({
         use: {
           loader: 'url-loader',
           options: {
-            limit: 10000
+            limit: 10000,
+            name: 'media/video/[name].[hash:7].[ext]'
           },
         },
       },

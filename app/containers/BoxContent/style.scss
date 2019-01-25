@@ -1,0 +1,117 @@
+@import '../../styles/application/variables';
+
+.section-tech {
+  margin: 3em 0;
+
+  &__title {
+    font-size: 1rem;
+    box-shadow: 0px 0px 21px 1px #CABEBE;
+    border-radius: 5px;
+    padding: .5em;
+    margin: .4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media #{$large} {
+      font-size: 1.5rem;
+      margin: 1em 0;
+      width: 50%;
+    }
+  }
+
+  &__content {
+    height: 25px;
+    width: 35%;
+    display: flex;
+
+    @media #{$large} {
+      height: 36px;
+    }
+
+    &-item {
+      display: flex;
+      height: 36px;
+      width: 50%;
+    }
+  }
+}
+
+.content-box {
+  border-radius: 5px;
+  box-shadow: 0px 0px 21px 1px rgba(100,147,191,0.66);
+  padding: 1em;
+  margin: 1em;
+  transition: .4s;
+
+  @media #{$medium} {
+    margin: 0 0 2em 0;
+  }
+
+  @media #{$large} {
+    margin: 0 0 2em 0;
+  }
+
+  &__header {
+    padding: 1em 1em 4em 1em;
+    font-size: .8rem;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    position: relative;
+  }
+
+  &__image {
+    border: 10px solid rgba(32, 35, 42,0.4);
+    background: #E3EAF3; // #F1F5F9;
+    width: 35%;
+    margin: auto;
+    padding: 1em 0;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media #{$large} {
+      padding: 1.5em 0;
+      top: 45%;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__body {
+    padding: 6em 2em 2em 2em;
+    font-size: .8rem;
+    position: relative;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &__button {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.botton-box {
+  background: #FFF;
+  border: 1px solid #CABEBE;
+  border-radius: 2px;
+  margin: .5em;
+  margin-left: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}

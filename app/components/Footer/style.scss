@@ -1,14 +1,24 @@
-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 3em 0;
-  border-top: 1px solid #666;
+.footer {
+  text-align: center;
+  background: #20232a;
+  margin-top: 1em;
+  padding: 3em;
+  width: 100%;
+  align-self: flex-end;
 
-  a {
-    color: #41addd;
-  
-    &:hover {
-      color: #6cc0e5;
-    }
+  &__content {
+    color: #FFF;
+    font-size: 1.5em;
+    margin: .5em 0;
+  }
+}
+
+.list-social {
+  list-style-type: none;
+  padding-left: 0;
+
+  &__item {
+    display: inline-block;
+    margin: 1em 2em;
   }
 }

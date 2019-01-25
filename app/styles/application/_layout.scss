@@ -1,0 +1,22 @@
+.wrapper {
+  margin: 0 auto;
+
+  @media #{$medium} {
+    width: 95%;
+  }
+
+  @media #{$large} {
+    width: 80%;
+  }
+}
+
+.section {
+  margin: 3em 0;
+  padding: 2em 0;
+}
+
+@media #{$large} {
+  .large--one-third {
+    width:33.333%;
+  }
+}

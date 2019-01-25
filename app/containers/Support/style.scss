@@ -1,0 +1,40 @@
+.section-support {
+  border: 1px solid;
+
+  &__title {
+    font-size: 4em;
+    text-align: center;
+    margin: .5em 0;
+  }
+
+  &__item {
+    font-size: 1rem;
+    margin: 1em 0;
+    width: 33.3%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    letter-spacing: .05em;
+
+    &-image {
+      border: 1px solid skyblue;
+      padding: 1em;
+    }
+
+    &-content {
+      border: 1px solid skyblue;
+      padding: 1em;
+    }
+
+    &-title {
+      border: 1px solid skyblue;
+      margin-top: 0;
+    }
+
+    &-text {
+      border: 1px solid skyblue;
+      padding: 1em;
+      text-align: left;
+    }
+  }
+}
